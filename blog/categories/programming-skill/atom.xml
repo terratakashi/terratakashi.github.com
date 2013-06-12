@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Programming Skill | Alex Chen's Blog]]></title>
+  <link href="http://terratakashi.github.io/blog/categories/programming-skill/atom.xml" rel="self"/>
+  <link href="http://terratakashi.github.io/"/>
+  <updated>2013-06-13T01:50:44+08:00</updated>
+  <id>http://terratakashi.github.io/</id>
+  <author>
+    <name><![CDATA[Alex Chen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby: Multiple if statements and do-while loop.]]></title>
+    <link href="http://terratakashi.github.io/blog/2013/06/12/ruby-multiple-if-statements-and-do-while-loop/"/>
+    <updated>2013-06-12T21:36:00+08:00</updated>
+    <id>http://terratakashi.github.io/blog/2013/06/12/ruby-multiple-if-statements-and-do-while-loop</id>
+    <content type="html"><![CDATA[<p><code>if</code> is the most basic statement in programming.  However, sometimes we need to deal with more complex logical issue by mutilple <code>if</code>
+statements.  In C/C++ programs, we usually use continuous <code>if</code> statements, but in Ruby, you should use a filter list and method <code>include?</code>
+to implement it.</p>
+
+<p>Here is a example in C/C++:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">if</span><span class="p">(</span> <span class="n">animal</span> <span class="o">!=</span> <span class="n">tiger</span> <span class="p">)</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span> <span class="n">animal</span> <span class="o">!=</span> <span class="n">lion</span> <span class="p">)</span>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span> <span class="n">animal</span> <span class="o">!=</span> <span class="n">snake</span> <span class="p">)</span>
+</span><span class='line'>            <span class="n">cout</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s">&quot;It&#39;s a safe animal.&quot;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>We can implement the same logical issue in Ruby by creating a list.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;dangerous_animal = [ tiger, lion, snake ]</span>
+</span><span class='line'><span class="sr">puts &quot;It&#39;s a safe animal.&quot; if !dangerous_animal.include? (animal)</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Therefore, it&rsquo;s more redable for creating a filter list first, and also the list is easy to modify.</p>
+
+<p>In Ruby language, there is no <code>do-while</code> like loop.  So the other way to reach the same effect is use <code>loop-do</code> and a terminated condition
+ to  implement that.</p>
+
+<p>Here is a example in C/C++:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">do</span><span class="p">{</span>
+</span><span class='line'>    <span class="n">statement</span>
+</span><span class='line'><span class="p">}</span><span class="k">while</span><span class="p">(</span> <span class="n">condition</span> <span class="p">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And in Ruby&rsquo;s way:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="kp">loop</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;statement</span>
+</span><span class='line'><span class="sr">break if statement</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt; end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>When I read some documents from Internet, they mentioned <code>do-while</code> loop is not necessary for Ruby.  Also, Matz doesn&rsquo;t want rubists to use this kind of logicals to solve problems.  In face, there are also potential problems for using <code>while</code> like loops.</p>
+]]></content>
+  </entry>
+  
+</feed>

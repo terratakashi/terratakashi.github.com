@@ -1,15 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>
+            http://terratakashi.github.io/blog/2013/06/12/ruby-multiple-if-statements-and-do-while-loop/
+        </loc>
+        <lastmod>2013-06-13T01:50:23+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://terratakashi.github.io/blog/archives/</loc>
-        <lastmod>2013-06-12T20:56:57+08:00</lastmod>
+        <lastmod>2013-06-13T01:50:23+08:00</lastmod>
     </url>
     <url>
         <loc>http://terratakashi.github.io/</loc>
-        <lastmod>2013-06-12T20:56:57+08:00</lastmod>
+        <lastmod>2013-06-13T01:50:23+08:00</lastmod>
     </url>
     <url>
         <loc>http://terratakashi.github.io/robots.txt</loc>
-        <lastmod>2013-06-12T20:56:57+08:00</lastmod>
+        <lastmod>2013-06-12T21:16:30+08:00</lastmod>
     </url>
 </urlset>
