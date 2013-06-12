@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://terratakashi.github.io/sitemap.xml 
