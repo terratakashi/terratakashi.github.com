@@ -7,7 +7,6 @@ categories: [Ruby, Regexp]
 ---
 
 Here are some good references about regular expression:
-=======================================================
 
 1. [Rubular](http://rubular.com)
 	This is a great Ruby regular expression online editor which can let you test your regexp in a interactive way.
