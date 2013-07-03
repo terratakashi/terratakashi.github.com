@@ -9,8 +9,7 @@
   <meta name="author" content="Alex Chen">
 
   
-  <meta name="description" content="if is the most basic statement in programming. However, sometimes we need to deal with more complex logical issue by mutilple if
-statements. In C/C &hellip;">
+  <meta name="description" content="Here are some good references about regular expression: Rubular This is a great Ruby regular expression online editor which can let you test your &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,95 @@ statements. In C/C &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/04/regexp-useful-regexp-resources/">Regexp:Useful-regexp-resources</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-04T01:15:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here are some good references about regular expression:</p>
+
+<ol>
+<li><p><a href="http://rubular.com">Rubular</a>
+ This is a great Ruby regular expression online editor which can let you test your regexp in a interactive way.</p></li>
+<li><p><a href="http://regex.bastardsbook.com">The Bastards Book of Regular Expressions</a>
+ A free guide to finding patterns in text by Dan Nguyen. There is also a <a href="http://ruby.bastardsbook.com/chapters/regexes/">brief version</a>.</p></li>
+<li><p><a href="http://www.addedbytes.com/cheat-sheets/regular-expressions-cheat-sheet/">Regular Expressions Cheat Sheet (V2)</a>
+ A great sheet for checking up common regexp quickly.</p></li>
+<li><p><a href="http://www.regular-expressions.info">Regular-Expression.info</a>
+ Lots of helpful documents for regexp.</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/04/regexp-how-to-deal-with-chinese-words/">Regexp:How-to-deal-with-Chinese-words</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-04T00:32:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today I&rsquo;m trying to use regexp to catch some special words.  For Chinses documents, it need to use <em>utf8</em> to present the words, so <code>/w</code> is useless in this case.</p>
+
+<p>For this problem, we can have two choices to  slove it:</p>
+
+<p>The first option, Chinese words distribute over <code>u4e00-u9fa5</code>, so we can use <code>[u4e00-u9fa5]</code> to catch them.<br/>
+The other option is using &lsquo;[^x00-xff]&rsquo; to detect the word which doesn&rsquo;t belongs to <em>ASCII codes</em>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -171,6 +259,14 @@ to implement it.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/04/regexp-useful-regexp-resources/">Regexp:Useful-regexp-resources</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/04/regexp-how-to-deal-with-chinese-words/">Regexp:How-to-deal-with-Chinese-words</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/06/12/ruby-multiple-if-statements-and-do-while-loop/">Ruby: Multiple if Statements and Do-while Loop.</a>

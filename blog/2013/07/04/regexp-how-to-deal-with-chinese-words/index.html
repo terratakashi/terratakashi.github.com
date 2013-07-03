@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Ruby - Alex Chen's Blog</title>
+  <title>Regexp:How-to-deal-with-Chinese-words - Alex Chen's Blog</title>
   <meta name="author" content="Alex Chen">
 
   
-  <meta name="description" content="Category: Ruby">
+  <meta name="description" content="Today I&rsquo;m trying to use regexp to catch some special words. For Chinses documents, it need to use utf8 to present the words, so /w is useless &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://terratakashi.github.ioblog/categories/ruby">
+  <link rel="canonical" href="http://terratakashi.github.io/blog/2013/07/04/regexp-how-to-deal-with-chinese-words">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Alex Chen's Blog" type="application/atom+xml">
@@ -64,63 +64,93 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Ruby</h1>
+    
+      <h1 class="entry-title">Regexp:How-to-deal-with-Chinese-words</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-04T00:32:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Today I&rsquo;m trying to use regexp to catch some special words.  For Chinses documents, it need to use <em>utf8</em> to present the words, so <code>/w</code> is useless in this case.</p>
 
-  
-  <h2>2013</h2>
+<p>For this problem, we can have two choices to  slove it:</p>
 
-<article>
-  
-<h1><a href="/blog/2013/07/04/regexp-useful-regexp-resources/">Regexp:Useful-regexp-resources</a></h1>
-<time datetime="2013-07-04T01:15:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>04</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/regexp/'>Regexp</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/07/04/regexp-how-to-deal-with-chinese-words/">Regexp:How-to-deal-with-Chinese-words</a></h1>
-<time datetime="2013-07-04T00:32:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>04</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/regexp/'>Regexp</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/06/12/ruby-multiple-if-statements-and-do-while-loop/">Ruby: Multiple if statements and do-while loop.</a></h1>
-<time datetime="2013-06-12T21:36:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>12</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/programming-skill/'>Programming Skill</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a></span>
-</footer>
-
-
-</article>
-
+<p>The first option, Chinese words distribute over <code>u4e00-u9fa5</code>, so we can use <code>[u4e00-u9fa5]</code> to catch them.<br/>
+The other option is using &lsquo;[^x00-xff]&rsquo; to detect the word which doesn&rsquo;t belongs to <em>ASCII codes</em>.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Alex Chen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-04T00:32:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/regexp/'>Regexp</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://terratakashi.github.io/blog/2013/07/04/regexp-how-to-deal-with-chinese-words/" data-via="terratakashi" data-counturl="http://terratakashi.github.io/blog/2013/07/04/regexp-how-to-deal-with-chinese-words/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/12/ruby-multiple-if-statements-and-do-while-loop/" title="Previous Post: Ruby: Multiple if statements and do-while loop.">&laquo; Ruby: Multiple if statements and do-while loop.</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/07/04/regexp-useful-regexp-resources/" title="Next Post: Regexp:Useful-regexp-resources">Regexp:Useful-regexp-resources &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>
