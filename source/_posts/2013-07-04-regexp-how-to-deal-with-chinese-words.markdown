@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Regexp:How-to-deal-with-Chinese-words"
+title: "Regexp: How to deal with Chinese words"
 date: 2013-07-04 00:32
 comments: true
 categories: [Regexp, Ruby]

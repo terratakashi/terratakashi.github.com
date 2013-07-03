@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Regexp:Useful-regexp-resources"
+title: "Regexp: Useful regexp resources"
 date: 2013-07-04 01:15
 comments: true
 categories: [Ruby, Regexp]
