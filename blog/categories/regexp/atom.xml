@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Regexp | Alex Chen's Blog]]></title>
   <link href="http://terratakashi.github.io/blog/categories/regexp/atom.xml" rel="self"/>
   <link href="http://terratakashi.github.io/"/>
-  <updated>2013-07-04T01:47:08+08:00</updated>
+  <updated>2013-07-04T01:49:21+08:00</updated>
   <id>http://terratakashi.github.io/</id>
   <author>
     <name><![CDATA[Alex Chen]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Regexp:Useful-regexp-resources]]></title>
+    <title type="html"><![CDATA[Regexp: Useful regexp resources]]></title>
     <link href="http://terratakashi.github.io/blog/2013/07/04/regexp-useful-regexp-resources/"/>
     <updated>2013-07-04T01:15:00+08:00</updated>
     <id>http://terratakashi.github.io/blog/2013/07/04/regexp-useful-regexp-resources</id>
@@ -35,7 +35,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Regexp:How-to-deal-with-Chinese-words]]></title>
+    <title type="html"><![CDATA[Regexp: How to deal with Chinese words]]></title>
     <link href="http://terratakashi.github.io/blog/2013/07/04/regexp-how-to-deal-with-chinese-words/"/>
     <updated>2013-07-04T00:32:00+08:00</updated>
     <id>http://terratakashi.github.io/blog/2013/07/04/regexp-how-to-deal-with-chinese-words</id>
