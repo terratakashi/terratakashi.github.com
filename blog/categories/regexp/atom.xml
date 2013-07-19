@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Regexp | Alex Chen's Blog]]></title>
   <link href="http://terratakashi.github.io/blog/categories/regexp/atom.xml" rel="self"/>
   <link href="http://terratakashi.github.io/"/>
-  <updated>2013-07-04T01:49:21+08:00</updated>
+  <updated>2013-07-20T02:30:18+08:00</updated>
   <id>http://terratakashi.github.io/</id>
   <author>
     <name><![CDATA[Alex Chen]]></name>
@@ -12,6 +12,148 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fetch Data From Broken Page]]></title>
+    <link href="http://terratakashi.github.io/blog/2013/07/20/fetch-data-from-broken-page/"/>
+    <updated>2013-07-20T01:13:00+08:00</updated>
+    <id>http://terratakashi.github.io/blog/2013/07/20/fetch-data-from-broken-page</id>
+    <content type="html"><![CDATA[<p>This was happening to me yesterday.  I tried to fetch some strings from ancient static pages which were made by frontpage before 10 years ago.</p>
+
+<p>The old page may look like this:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>html<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>head<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=big5&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>meta name=&quot;GENERATOR&quot; content=&quot;Microsoft FrontPage 5.0&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>meta name=&quot;ProgId&quot; content=&quot;FrontPage.Editor.Document&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>比利時粗毛獵犬<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>/head<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>body bgcolor=&quot;#FFCC99&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>p align=&quot;center&quot;<span class="ni">&amp;gt;&amp;lt;</span>img border=&quot;0&quot; src=&quot;74-1.jpg&quot; width=&quot;327&quot; height=&quot;432&quot;<span class="ni">&amp;gt;&amp;lt;</span>/p<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>p align=&quot;center&quot;<span class="ni">&amp;gt;&amp;lt;</span>font color=&quot;#0000FF&quot; face=&quot;正謙重圓黑框字形&quot; size=&quot;7&quot;<span class="ni">&amp;gt;</span>比利時粗毛獵犬<span class="ni">&amp;lt;</span>/font<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>p align=&quot;center&quot;<span class="ni">&amp;gt;&amp;lt;</span>b<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>span lang=&quot;EN-US&quot; style=&quot;font-size: 16pt; color: teal; font-family: 標楷體; background: yellow&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>a style=&quot;color: blue; text-decoration: underline&quot; href=&quot;http://www.abcd.com/NEW_PAGE_14.HTM&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>犬種圖鑑百科<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;&amp;lt;</span>/span<span class="ni">&amp;gt;&amp;lt;</span>span lang=&quot;EN-US&quot; style=&quot;FONT-SIZE: 16pt; COLOR: teal; FONT-FAMILY: 標楷體&quot;<span class="ni">&amp;gt;&amp;amp;</span>nbsp;
+</span><span class='line'><span class="ni">&amp;lt;</span>/span<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>span lang=&quot;EN-US&quot; style=&quot;font-size: 16pt; color: blue; font-family: 標楷體; background: yellow&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>a style=&quot;color: blue; text-decoration: underline&quot; href=&quot;http://www.abcd.com/NEW_PAGE_13.HTM&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>貓種圖鑑百科<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;&amp;lt;</span>/span<span class="ni">&amp;gt;&amp;lt;</span>span lang=&quot;EN-US&quot; style=&quot;FONT-SIZE: 16pt; COLOR: blue; FONT-FAMILY: 標楷體&quot;<span class="ni">&amp;gt;&amp;amp;</span>nbsp;
+</span><span class='line'><span class="ni">&amp;lt;</span>span style=&quot;background: yellow&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>a style=&quot;color: blue; text-decoration: underline&quot; href=&quot;http://www.abcd.com/new_page_204.htm&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>寵物兔圖鑑百科<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;&amp;lt;</span>/span<span class="ni">&amp;gt;</span> <span class="ni">&amp;lt;</span>span style=&quot;background: yellow&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>a style=&quot;color: blue; text-decoration: underline&quot; href=&quot;http://www.abcd.com/new_page_193.htm&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>錦鯉品種圖鑑百科<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;&amp;lt;</span>/span<span class="ni">&amp;gt;</span> <span class="ni">&amp;lt;</span>span style=&quot;background: yellow&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>a style=&quot;color: blue; text-decoration: underline&quot; href=&quot;http://www.abcd.com/&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>回首頁<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;&amp;lt;</span>/span<span class="ni">&amp;gt;&amp;lt;</span>/span<span class="ni">&amp;gt;&amp;lt;</span>/b<span class="ni">&amp;gt;&amp;lt;</span>p align=&quot;left&quot;<span class="ni">&amp;gt;</span>原產地：比利時<span class="ni">&amp;lt;</span>p align=&quot;left&quot;<span class="ni">&amp;gt;</span>身高：20公分
+</span><span class='line'><span class="ni">&amp;lt;</span>p align=&quot;left&quot;<span class="ni">&amp;gt;</span>體重：3.5公斤至4.5公斤。5.4公斤以下。<span class="ni">&amp;lt;</span>p align=&quot;left&quot;<span class="ni">&amp;gt;</span>歷史：本犬種是從17世紀時，由德國的篤賓犬和名利時的當地大改良而來，到了19世紀才成為現在的樣子。最初改良的目的是為捕鼠。<span class="ni">&amp;lt;</span>p align=&quot;left&quot;<span class="ni">&amp;gt;&amp;lt;</span>br<span class="ni">&amp;gt;</span>
+</span><span class='line'>特徵：可斷尾或斷耳，聰明乖巧<span class="ni">&amp;lt;</span>br<span class="ni">&amp;gt;</span>
+</span><span class='line'>，十分渾圓。<span class="ni">&amp;lt;</span>p align=&quot;left&quot;<span class="ni">&amp;gt;</span>毛色毛質：分為粗毛與順毛二種，粗毛種的毛質粗，順毛則短有彈性，順毛種無黑色，主要顏色有暗褐、紅褐色，夾鬚與顎頭鬚的顏色較深。<span class="ni">&amp;lt;</span>p align=&quot;left&quot;<span class="ni">&amp;gt;&amp;lt;</span>br<span class="ni">&amp;gt;</span>
+</span><span class='line'>附註：本犬種的數量不多，    但卻有許多狗迷<span class="ni">&amp;lt;</span>/body<span class="ni">&amp;gt;&amp;lt;</span>/html<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+At first, I try to use <code>mechanize</code> to retrieve the particular text from dedicated area.  Howeve, due to the missing and messy tags, it didn&rsquo;t work by using simple selectors.  Therefore, I brutally fetch all text from the page.</p>
+
+<p>Also, I found out there are several unsual whitespace characters within it, so I got rid of all white space characters which include line changing, tab, and space.</p>
+
+<p>The code looks like this:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;content = page.parser.text.gsub(/</span><span class="p">\</span><span class="n">s</span><span class="o">/</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+Finally, I got a raw text data by repeating tests, and I need to deal with the sticky text.  Fortunately, the page was talking about the classification.  So I can easily to punctuate the content by using regular expressions, and add line changing before every categories.</p>
+
+<p>This is the code for punctuating the text:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;kind_list = [&quot;原產地&quot;, &quot;身高&quot;, &quot;體重&quot;, &quot;歷史&quot;, &quot;特徵&quot;, &quot;個性&quot;, &quot;毛色毛質&quot;, &quot;附註&quot;] </span>
+</span><span class='line'><span class="sr">kind_list.each do |kind|</span>
+</span><span class='line'><span class="sr">  content = content.sub(kind, &quot;\n</span><span class="si">#{</span><span class="n">kind</span><span class="si">}</span><span class="sr">&quot;)</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+And the result is here:</p>
+
+<pre><code>名稱-比利時粗毛獵犬
+原產地-比利時
+身高-20公分
+體重-3.5公斤至4.5公斤。5.4公斤以下。
+歷史-本犬種是從17世紀時，由德國的篤賓犬和名利時的當地大改良而來，到了19世紀才成為現在的樣子。最初改良的目的是為捕鼠。
+特徵-可斷尾或斷耳，聰明乖巧，十分渾圓。
+個性-
+毛色毛質-分為粗毛與順毛二種，粗毛種的毛質粗，順毛則短有彈性，順毛種無黑色，主要顏色有暗褐、紅褐色，夾鬚與顎頭鬚的顏色較深。
+附註-本犬種的數量不多，但卻有許多狗迷
+</code></pre>
+
+<p>Regexp is so powerful.  I start to be addicted to it!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Regexp: Useful regexp resources]]></title>
