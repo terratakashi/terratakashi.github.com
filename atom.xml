@@ -4,7 +4,7 @@
   <title><![CDATA[Alex Chen's Blog]]></title>
   <link href="http://terratakashi.github.io/atom.xml" rel="self"/>
   <link href="http://terratakashi.github.io/"/>
-  <updated>2013-07-20T02:30:18+08:00</updated>
+  <updated>2013-08-01T02:08:09+08:00</updated>
   <id>http://terratakashi.github.io/</id>
   <author>
     <name><![CDATA[Alex Chen]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to convert original text document into web page content]]></title>
+    <link href="http://terratakashi.github.io/blog/2013/07/26/how-to-convert-original-text-document-into-web-page-content/"/>
+    <updated>2013-07-26T15:49:00+08:00</updated>
+    <id>http://terratakashi.github.io/blog/2013/07/26/how-to-convert-original-text-document-into-web-page-content</id>
+    <content type="html"><![CDATA[<pre><code>Today I'm dealing with the lot's of txt files which I have already push them into the database.  However, I used text field in database and original text document type which means the content of document will be stored like a quite long string, and contain lot's of line changinge character(`\n`).
+</code></pre>
+
+<p>At first, I simply only treat them like instance variable, so I got a terrible result which looked like everything screw up together.  After a while, I found out line changing characters(<code>\n</code>) didn&rsquo;t appear at right place.</p>
+
+<p>My document:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>裁判字號:101,審訴緝,31
+</span><span class='line'>裁判日期:1010719
+</span><span class='line'>裁判案由:妨害兵役
+</span><span class='line'>裁判全文:
+</span><span class='line'>臺灣臺北地方法院刑事判決　　　　　 101年度審訴緝字第31號
+</span><span class='line'>...</span></code></pre></td></tr></table></div></figure>
+
+
+<p>My code is like this:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;%=</span> <span class="vi">@document</span><span class="o">.</span><span class="n">content</span> <span class="o">%&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And the terrible result:
+<img src="https://s3.amazonaws.com/logdown-production/user/2007/blog/2009/post/65216/97AQnV4SRyzRECrS4pLz_Drlaw" alt="Drlaw" /></p>
+
+<p>Then I survey the related documents on Internet, and there are two solutions to solve that.  One of that is using the HTML tag <code>&lt;pre&gt;</code> to keep the original format, and the other one is using rails method <code>simple_format</code> to do the same effect.</p>
+
+<p>Here is the result and source HTML of using <code>&lt;pre&gt;</code>:
+<img src="https://s3.amazonaws.com/logdown-production/user/2007/blog/2009/post/65216/3zvZQJfRSq6y891l2qj8_Drlaw" alt="Drlaw" />
+<img src="https://s3.amazonaws.com/logdown-production/user/2007/blog/2009/post/65216/dDNhullWTtW7UOzgkjth_view-source:localhost:3000/tasks/22745" alt="view-source:localhost:3000/tasks/22745" /></p>
+
+<p>And here is the result and source HTML of using rails method <code>simple_format</code>:
+<img src="https://s3.amazonaws.com/logdown-production/user/2007/blog/2009/post/65216/sKsedsCQYChiwi0VIrfH_Drlaw" alt="Drlaw" />
+<img src="https://s3.amazonaws.com/logdown-production/user/2007/blog/2009/post/65216/hJcAa94mS72IXHHcf5vI_view-source:localhost:3000/tasks/22745" alt="view-source:localhost:3000/tasks/22745" /></p>
+
+<p>Do you find the difference between them?  The most important difference is that their HTML format are totally different.  The HTML tag <code>&lt;pre&gt;</code> present the same way with txt file, and <code>simple_format</code> replace all <code>\n</code> to <code>&lt;br&gt;</code>.  In my opinion, I recommand the rails method <code>simple_format</code> which is more flexible than only using <code>&lt;pre&gt;</code> tag.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fetch Data From Broken Page]]></title>

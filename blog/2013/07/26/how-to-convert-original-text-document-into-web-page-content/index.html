@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ruby: Multiple if statements and do-while loop. - Alex Chen's Blog</title>
+  <title>How to convert original text document into web page content - Alex Chen's Blog</title>
   <meta name="author" content="Alex Chen">
 
   
-  <meta name="description" content="if is the most basic statement in programming. However, sometimes we need to deal with more complex logical issue by mutilple if
-statements. In C/C &hellip;">
+  <meta name="description" content="Today I'm dealing with the lot's of txt files which I have already push them into the database. However, I used text field in database and original &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ statements. In C/C &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://terratakashi.github.io/blog/2013/06/12/ruby-multiple-if-statements-and-do-while-loop">
+  <link rel="canonical" href="http://terratakashi.github.io/blog/2013/07/26/how-to-convert-original-text-document-into-web-page-content">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Alex Chen's Blog" type="application/atom+xml">
@@ -69,7 +68,7 @@ statements. In C/C &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Ruby: Multiple if Statements and Do-while Loop.</h1>
+      <h1 class="entry-title">How to Convert Original Text Document Into Web Page Content</h1>
     
     
       <p class="meta">
@@ -85,71 +84,55 @@ statements. In C/C &hellip;">
   
 
 
-<time datetime="2013-06-12T21:36:00+08:00" pubdate data-updated="true">Jun 12<span>th</span>, 2013</time>
+<time datetime="2013-07-26T15:49:00+08:00" pubdate data-updated="true">Jul 26<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><code>if</code> is the most basic statement in programming.  However, sometimes we need to deal with more complex logical issue by mutilple <code>if</code>
-statements.  In C/C++ programs, we usually use continuous <code>if</code> statements, but in Ruby, you should use a filter list and method <code>include?</code>
-to implement it.</p>
+<div class="entry-content"><pre><code>Today I'm dealing with the lot's of txt files which I have already push them into the database.  However, I used text field in database and original text document type which means the content of document will be stored like a quite long string, and contain lot's of line changinge character(`\n`).
+</code></pre>
 
-<p>Here is a example in C/C++:</p>
+<p>At first, I simply only treat them like instance variable, so I got a terrible result which looked like everything screw up together.  After a while, I found out line changing characters(<code>\n</code>) didn&rsquo;t appear at right place.</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>My document:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='c++'><span class='line'>  <span class="k">if</span><span class="p">(</span> <span class="n">animal</span> <span class="o">!=</span> <span class="n">tiger</span> <span class="p">)</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span> <span class="n">animal</span> <span class="o">!=</span> <span class="n">lion</span> <span class="p">)</span>
-</span><span class='line'>          <span class="k">if</span><span class="p">(</span> <span class="n">animal</span> <span class="o">!=</span> <span class="n">snake</span> <span class="p">)</span>
-</span><span class='line'>              <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;It&#39;s a safe animal.&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>裁判字號:101,審訴緝,31
+</span><span class='line'>裁判日期:1010719
+</span><span class='line'>裁判案由:妨害兵役
+</span><span class='line'>裁判全文:
+</span><span class='line'>臺灣臺北地方法院刑事判決　　　　　 101年度審訴緝字第31號
+</span><span class='line'>...</span></code></pre></td></tr></table></div></figure>
 
 
-<p>We can implement the same logical issue in Ruby by creating a list.</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">dangerous_animal</span> <span class="o">=</span> <span class="o">[</span> <span class="n">tiger</span><span class="p">,</span> <span class="n">lion</span><span class="p">,</span> <span class="n">snake</span> <span class="o">]</span>
-</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;It&#39;s a safe animal.&quot;</span> <span class="k">if</span> <span class="o">!</span><span class="n">dangerous_animal</span><span class="o">.</span><span class="n">include?</span> <span class="p">(</span><span class="n">animal</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Therefore, it&rsquo;s more redable for creating a filter list first, and also the list is easy to modify.</p>
-
-<p>In Ruby language, there is no <code>do-while</code> like loop.  So the other way to reach the same effect is use <code>loop-do</code> and a terminated condition
- to  implement that.</p>
-
-<p>Here is a example in C/C++:</p>
+<p>My code is like this:</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='c++'><span class='line'>  <span class="k">do</span><span class="p">{</span>
-</span><span class='line'>      <span class="n">statement</span>
-</span><span class='line'>  <span class="p">}</span><span class="k">while</span><span class="p">(</span> <span class="n">condition</span> <span class="p">)</span>
-</span><span class='line'>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;%=</span> <span class="vi">@document</span><span class="o">.</span><span class="n">content</span> <span class="o">%&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>And in Ruby&rsquo;s way:</p>
+<p>And the terrible result:
+<img src="https://s3.amazonaws.com/logdown-production/user/2007/blog/2009/post/65216/97AQnV4SRyzRECrS4pLz_Drlaw" alt="Drlaw" /></p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="kp">loop</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">statement</span>
-</span><span class='line'>  <span class="k">break</span> <span class="k">if</span> <span class="n">statement</span>
-</span><span class='line'> <span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>Then I survey the related documents on Internet, and there are two solutions to solve that.  One of that is using the HTML tag <code>&lt;pre&gt;</code> to keep the original format, and the other one is using rails method <code>simple_format</code> to do the same effect.</p>
 
+<p>Here is the result and source HTML of using <code>&lt;pre&gt;</code>:
+<img src="https://s3.amazonaws.com/logdown-production/user/2007/blog/2009/post/65216/3zvZQJfRSq6y891l2qj8_Drlaw" alt="Drlaw" />
+<img src="https://s3.amazonaws.com/logdown-production/user/2007/blog/2009/post/65216/dDNhullWTtW7UOzgkjth_view-source:localhost:3000/tasks/22745" alt="view-source:localhost:3000/tasks/22745" /></p>
 
-<p>When I read some documents from Internet, they mentioned <code>do-while</code> loop is not necessary for Ruby.  Also, Matz doesn&rsquo;t want rubists to use this kind of logicals to solve problems.  In face, there are also potential problems for using <code>while</code> like loops.</p>
+<p>And here is the result and source HTML of using rails method <code>simple_format</code>:
+<img src="https://s3.amazonaws.com/logdown-production/user/2007/blog/2009/post/65216/sKsedsCQYChiwi0VIrfH_Drlaw" alt="Drlaw" />
+<img src="https://s3.amazonaws.com/logdown-production/user/2007/blog/2009/post/65216/hJcAa94mS72IXHHcf5vI_view-source:localhost:3000/tasks/22745" alt="view-source:localhost:3000/tasks/22745" /></p>
+
+<p>Do you find the difference between them?  The most important difference is that their HTML format are totally different.  The HTML tag <code>&lt;pre&gt;</code> present the same way with txt file, and <code>simple_format</code> replace all <code>\n</code> to <code>&lt;br&gt;</code>.  In my opinion, I recommand the rails method <code>simple_format</code> which is more flexible than only using <code>&lt;pre&gt;</code> tag.</p>
 </div>
 
 
@@ -172,12 +155,12 @@ to implement it.</p>
   
 
 
-<time datetime="2013-06-12T21:36:00+08:00" pubdate data-updated="true">Jun 12<span>th</span>, 2013</time>
+<time datetime="2013-07-26T15:49:00+08:00" pubdate data-updated="true">Jul 26<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/programming-skill/'>Programming Skill</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+    <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
   
 </span>
 
@@ -186,7 +169,7 @@ to implement it.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://terratakashi.github.io/blog/2013/06/12/ruby-multiple-if-statements-and-do-while-loop/" data-via="terratakashi" data-counturl="http://terratakashi.github.io/blog/2013/06/12/ruby-multiple-if-statements-and-do-while-loop/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://terratakashi.github.io/blog/2013/07/26/how-to-convert-original-text-document-into-web-page-content/" data-via="terratakashi" data-counturl="http://terratakashi.github.io/blog/2013/07/26/how-to-convert-original-text-document-into-web-page-content/" >Tweet</a>
   
   
   
@@ -197,8 +180,8 @@ to implement it.</p>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/07/20/fetch-data-from-broken-page/" title="Previous Post: Fetch Data From Broken Page">&laquo; Fetch Data From Broken Page</a>
       
-        <a class="basic-alignment right" href="/blog/2013/07/04/regexp-how-to-deal-with-chinese-words/" title="Next Post: Regexp: How to deal with Chinese words">Regexp: How to deal with Chinese words &raquo;</a>
       
     </p>
   </footer>
